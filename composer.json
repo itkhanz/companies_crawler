@@ -1,0 +1,17 @@
+{
+    "name": "itkhan/php_scraper",
+    "autoload": {
+        "psr-4": {
+            "Itkhan\\PhpScraper\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "itkhan",
+            "email": "itkhanz@gmail.com"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^7.3"
+    }
+}

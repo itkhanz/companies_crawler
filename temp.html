@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="card">
+      <div class="card-header">Entry Date</div>
+      <div class="card-body">
+        <h5 class="card-title">Title of the Company to be sold</h5>
+        <h6 class="card-subtitle mb-2 text-muted">Company Branches</h6>
+        <p class="card-text">
+          With supporting text below as a natural lead-in to additional content.
+        </p>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">No. of Employees</li>
+          <li class="list-group-item">Last Annual Turnover</li>
+          <li class="list-group-item">Asking Price</li>
+        </ul>
+        <div class="card-body">
+          <a href="#" class="btn btn-primary">To details</a>
+          <a href="#" class="btn btn-primary">View Original</a>
+        </div>
+      </div>
+      <div class="card-footer text-muted">Company Locations</div>
+    </div>
+  </body>
+</html>
+
+<!-- if ($search) {
+    //     $statement = $pdo->prepare('SELECT * FROM companies WHERE company_title LIKE :title ORDER BY company_entry_date DESC');
+    //     $statement->bindValue(':title', "%$search%");
+    // } else {
+    //     $statement = $pdo->prepare('SELECT * FROM companies');
+    // } -->
+    
+
+<!-- <h3><?php echo $count ?></h3>
+    //         <h3><a href="<?php echo $data[$key]['source_url'] ?>"><?php echo $data[$key]['title'] ?></a></h3>
+    //         <p><?php echo 'Date of Entry: ' .  $data[$key]['entry_dates'] . '<br>' ?></p>
+    //         <p><?php echo 'Brief Description: ' .  $data[$key]['brief_description'] . '<br>' ?></p>
+    //         <p><?php echo 'Locations: ' .  $data[$key]['location'] . '<br>' ?></p>
+    //         <p><?php echo 'Branches: ' .  $data[$key]['branches'] . '<br>' ?></p>
+    //         <p><?php echo 'Employees: ' .  $data[$key]['employees'] . '<br>' ?></p>
+    //         <p><?php echo 'Last annual turnover: ' .  $data[$key]['last_annual_sales'] . '<br>' ?></p>
+    //         <p><?php echo 'Asking Price: ' .  $data[$key]['price'] . '<br>' ?></p>
+    //         <p><?php echo 'Detailed Description: ' .  $data[$key]['detailed_description'] . '<br>' ?></p> -->
+
+<!-- <h3><?php echo $key + 1 ?></h3>
+        <h3><a href="<?php echo $company['company_source'] ?>"><?php echo $company['company_title'] ?></a></h3>
+        <p><?php echo 'Date of Entry: ' .  $company['company_entry_date'] . '<br>' ?></p>
+        <p><?php echo 'Brief Description: ' .  $company['company_brief'] . '<br>' ?></p>
+        <p><?php echo 'Locations: ' .  $company['company_location'] . '<br>' ?></p>
+        <p><?php echo 'Branches: ' .  $company['company_branches'] . '<br>' ?></p>
+        <p><?php echo 'Employees: ' .  $company['company_employees'] . '<br>' ?></p>
+        <p><?php echo 'Last annual turnover: ' .  $company['company_annual_sales'] . '<br>' ?></p>
+        <p><?php echo 'Asking Price: ' .  $company['company_price'] . '<br>' ?></p>
+        <p><?php echo 'Detailed Description: ' .  $company['company_detail'] . '<br>' ?></p> -->
+
+<?php
+        <div class="card mb-5">
+            <div class="card-header">
+                <?php echo 'Date of Entry: ' .  $company['company_entry_date'] ?>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title"><?php echo $company['company_title'] ?></h5>
+                <h6 class="card-subtitle mb-2 text-muted"><?php echo $company['company_branches'] ?></h6>
+                <p class="card-text"><?php echo $company['company_brief'] ?></p>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><?php echo 'Employees: ' .  $company['company_employees'] . '<br>' ?></li>
+                    <li class="list-group-item"><?php echo 'Last annual turnover: ' .  $company['company_annual_sales'] ?></li>
+                    <li class="list-group-item"><?php echo 'Asking Price: ' .  $company['company_price'] . '<br>' ?></li>
+                </ul>
+                <div class="mt-1">
+                    <button type="button" class="btn btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal-<?php echo $key + 1 ?>">View details</button>
+                    <a href="<?php echo $company['company_source'] ?>" target="_blank" class="btn btn-primary btn-sm">View Original</a>
+                </div>
+            </div>
+
+            <div class="card-footer text-muted">
+                <?php echo 'Locations: ' .  str_replace(">", "|", $company['company_location']) ?>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal-<?php echo $key + 1 ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Company Details</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+
+                        <h5><?php echo $company['company_title'] ?></h5>
+                        <h6>Detailed description:</h6>
+                        <p><?php echo $company['company_detail'] ?></p>
+                        <hr>
+                        <h6>Branches:</h6>
+                        <p><?php echo $company['company_branches'] ?></p>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <a href="<?php echo $company['company_source'] ?>" class="btn btn-primary">View Original</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+?>

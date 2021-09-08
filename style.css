@@ -1,0 +1,22 @@
+body {
+  padding: 50px;
+}
+
+#pagination {
+  text-align: center;
+  padding: 10px;
+}
+#pagination a {
+  background: #fff;
+  color: #2980b9;
+  text-decoration: none;
+  display: inline-block;
+  padding: 5px 10px;
+  margin-right: 1px;
+  border-radius: 3px;
+  border: 1px solid #2980b9;
+}
+#pagination a.active {
+  background: #2980b9;
+  color: #fff;
+}
